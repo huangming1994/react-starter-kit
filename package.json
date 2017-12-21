@@ -1,0 +1,39 @@
+{
+  "name": "react-ele-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangming1994/react-ele-start.git"
+  },
+  "author": "super",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huangming1994/react-ele-start/issues"
+  },
+  "homepage": "https://github.com/huangming1994/react-ele-start#readme",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.2",
+    "html-webpack-plugin": "^2.30.1",
+    "open-browser-webpack-plugin": "0.0.5",
+    "progress-bar-webpack-plugin": "^1.10.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.2",
+    "webpack-hot-middleware": "^2.21.0"
+  }
+}
