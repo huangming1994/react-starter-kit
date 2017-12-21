@@ -13,6 +13,10 @@ base.plugins.push(
   }),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoEmitOnErrorsPlugin(),
+  new webpack.DllReferencePlugin({
+    context: __dirname,
+    manifest: require('../node_modules/react-ele-start-dlls/vendor-manifest.json')
+  }),
   new openBrowserWebpackPlugin({ url: 'http://localhost:9999' })
 )
 
