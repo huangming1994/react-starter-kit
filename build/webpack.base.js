@@ -1,7 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const pkg = require('../package.json')
 
 module.exports = {
   entry: {
@@ -27,12 +24,5 @@ module.exports = {
         loader: 'file-loader?limit=8192'
       }
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'react-ele-start',
-      template: __dirname + '/index.html',
-      filename: './index.html'
-    })
-  ]
+  }
 }

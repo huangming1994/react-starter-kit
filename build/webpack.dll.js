@@ -1,27 +1,27 @@
 const webpack = require('webpack')
 const path = require('path')
-
-const outputPath = path.join(__dirname, '../node_modules/react-ele-start-dlls')
+const config = require('./config')
+const dllPath = path.join(__dirname, '../node_modules/react-ele-start-dlls')
 
 module.exports = {
   entry: {
-    vendor: [
-      'react',
-      'react-dom',
-      'react-redux',
-      'react-router'
-    ]
+    vendor: config.dll
   },
   output: {
     filename: "[name].dll.js",
-    path: outputPath,
+    path: dllPath,
     library: '[name]'
   },
   plugins: [
     new webpack.DllPlugin({
-      path: path.join(outputPath, '[name]-manifest.json'),
+      path: path.join(dllPath, '[name]-manifest.json'),
       name: '[name]',
       context: __dirname
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
     })
   ]
 }

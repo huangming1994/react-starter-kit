@@ -3,6 +3,7 @@ const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const webpackConfig = require('./webpack.dev')
+const dllPlugin = require('./config')
 
 const app = express()
 
@@ -26,11 +27,18 @@ const devMiddleWare = require('webpack-dev-middleware')(compiler, {
 app.use(devMiddleWare)
 app.use(require('webpack-hot-middleware')(compiler))
 
+if (dllPlugin) {
+  app.get(/\.dll\.js$/, (req, res) => {
+    const filename = req.path.replace(/^\//, '')
+    res.sendFile(path.join(process.cwd(), filename));
+  });
+}
+
 app.get('*', (req, res) => {
   const fs = devMiddleWare.fileSystem
   devMiddleWare.waitUntilValid(() => {
     const html = fs.readFileSync(path.join(webpackConfig.output.path, './index.html'))
-    res.end(html)
+    res.send(html.toString())
   })
 })
 
