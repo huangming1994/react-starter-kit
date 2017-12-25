@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node build/server.js",
     "build:dll": "webpack --config build/webpack.dll.js",
-    "build:prod": "webpack --config build/webpack.prod.js"
+    "build:prod": "webpack --config build/webpack.prod.js",
+    "test": "node node_modules/eslint/bin/eslint.js src",
+    "fix": "node node_modules/eslint/bin/eslint.js src --fix"
   },
   "repository": {
     "type": "git",

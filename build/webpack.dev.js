@@ -48,7 +48,7 @@ function templateContent() {
   if (!dllPlugin) { return html }
 
   const $ = cheerio.load(html)
-  $('body').append(`<script src='../node_modules/react-ele-start-dlls/vendor.dll.js'></script>`)
+  $('body').append(`<script src='/vendor.dll.js'></script>`)
 
   return $.html()
 }
