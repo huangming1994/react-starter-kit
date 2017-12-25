@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "node build/server.js",
-    "build:dll": "webpack --config build/webpack.dll.js"
+    "build:dll": "webpack --config build/webpack.dll.js",
+    "build:prod": "webpack --config build/webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
     "open-browser-webpack-plugin": "0.0.5",
     "progress-bar-webpack-plugin": "^1.10.0",
