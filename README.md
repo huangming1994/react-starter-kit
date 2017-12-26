@@ -5,16 +5,16 @@
 - build
     | - config.js  打包的配置文件
     | - index.html   模板html
-    | - webpack.base.js  	webpack基础通用配置
-    | - webpack.dev.js 	 	webpack开发环境配置
-    | - webpack.prod.js  	webpack生产环境配置
-    | - webpack.dll.js   	webpack dll配置
+    | - webpack.base.js   webpack基础通用配置
+    | - webpack.dev.js    webpack开发环境配置
+    | - webpack.prod.js   webpack生产环境配置
+    | - webpack.dll.js    webpack dll配置
 - hooks
-    | - pre-push  	git push钩子
+    | - pre-push     git push钩子
 - src
-    | - components 		公用组件
-    | - containers		路由page
-    | - middleware  	中间件
+    | - components    公用组件
+    | - containers    路由page
+    | - middleware    中间件
     | - routes   路由
     | - App.js 	入口文件
     | - reducers.js  	总的reducers文件
