@@ -17,11 +17,6 @@ module.exports = {
       path: path.join(dllPath, '[name]-manifest.json'),
       name: '[name]',
       context: __dirname
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
     })
   ]
 }

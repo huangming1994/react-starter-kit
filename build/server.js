@@ -30,8 +30,8 @@ app.use(require('webpack-hot-middleware')(compiler))
 if (dllPlugin) {
   app.get(/\.dll\.js$/, (req, res) => {
     const filename = req.path.replace(/^\//, '')
-    res.sendFile(path.join(process.cwd(), 'node_modules/react-ele-start-dlls/', filename));
-  });
+    res.sendFile(path.join(process.cwd(), 'node_modules/react-ele-start-dlls/', filename))
+  })
 }
 
 app.get('*', (req, res) => {
