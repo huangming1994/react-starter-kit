@@ -25,9 +25,9 @@
 ```
 - containers
     | - xxxPage
-       | - reducers.js		单文件reducers.js
-       | - actions.js		单文件actions.js
-       | - index.js			单文件入口
+       | - reducers.js  单文件reducers.js
+       | - actions.js   单文件actions.js
+       | - index.js	    单文件入口
 
 ```
 
@@ -36,5 +36,5 @@
 npm i   安装依赖
 npm run postinstall copy钩子到.git
 npm run build:dll   生成dll
-npm run dev 	启服务
+npm run dev   启服务
 ```
