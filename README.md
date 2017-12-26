@@ -17,8 +17,8 @@
     | - middleware    中间件
     | - routes   路由
     | - App.js 	入口文件
-    | - reducers.js  	总的reducers文件
-    | - store.js  	全局store文件
+    | - reducers.js  总的reducers文件
+    | - store.js    全局store文件
 ```
 
 注: container下是每个对应的page文件夹，每个文件夹对应一个reducers.js，一个actions.js，一个index.js。
