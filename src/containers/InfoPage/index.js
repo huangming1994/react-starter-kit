@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { infoPageAction } from './actions'
 
+@connect(mapStateToProps, mapDispatchToProps)
 class InfoPage extends Component {
   componentWillMount() {
     this.props.infoPageAction('infoPage')
@@ -21,10 +22,10 @@ function mapStateToProps(state) {
   }
 }
 
-function mapActionToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     infoPageAction: compose(dispatch, infoPageAction)
   }
 }
 
-export default connect(mapStateToProps, mapActionToProps)(InfoPage)
+export default InfoPage

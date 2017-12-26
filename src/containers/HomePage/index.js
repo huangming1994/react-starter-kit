@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { homePageAction } from './actions'
 
+@connect(mapStateToProps, mapDispatchToProps)
 class HomePage extends Component {
   componentWillMount() {
     this.props.homePageAction('homePage')
@@ -21,10 +22,10 @@ function mapStateToProps(state) {
   }
 }
 
-function mapActionToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     homePageAction: compose(dispatch, homePageAction)
   }
 }
 
-export default connect(mapStateToProps, mapActionToProps)(HomePage)
+export default HomePage
