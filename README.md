@@ -27,7 +27,7 @@
     | - xxxPage
        | - reducers.js  单文件reducers.js
        | - actions.js   单文件actions.js
-       | - index.js	    单文件入口
+       | - index.js     单文件入口
 
 ```
 
