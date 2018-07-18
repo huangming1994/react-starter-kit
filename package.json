@@ -5,12 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "node build/server.js",
-    "build:dll": "webpack --config build/webpack.dll.js",
+    "build:dev": "webpack --config build/webpack.dev.js",
     "build:prod": "webpack --config build/webpack.prod.js",
     "test": "node node_modules/eslint/bin/eslint.js src",
-    "fix": "node node_modules/eslint/bin/eslint.js src --fix",
-    "postinstall": "cp hooks/* .git/hooks/"
+    "fix": "node node_modules/eslint/bin/eslint.js src --fix"
   },
+  "pre-commit": [
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/huangming1994/react-ele-start.git"
@@ -23,37 +25,36 @@
   "homepage": "https://github.com/huangming1994/react-ele-start#readme",
   "dependencies": {
     "history": "^4.7.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2"
+    "pre-commit": "^1.2.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.1.2",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "cheerio": "^1.0.0-rc.2",
-    "eslint": "^4.14.0",
+    "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-react": "^7.5.1",
-    "eslint-plugin-standard": "^3.0.1",
-    "express": "^4.16.2",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^2.30.1",
-    "open-browser-webpack-plugin": "0.0.5",
-    "progress-bar-webpack-plugin": "^1.10.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-middleware": "^2.0.2",
-    "webpack-hot-middleware": "^2.21.0"
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "express": "^4.16.3",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "webpack": "^4.16.1",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-hot-middleware": "^2.22.3"
   }
 }

@@ -1,14 +1,13 @@
-'use strict'
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
-const webpackConfig = require('./webpack.dev')
-const dllPlugin = require('./config')
+const config = require('./config')
+const webpackConfig = require('./webpack.local')
 
 const app = express()
 
 webpackConfig.entry.client = [
-  'webpack-hot-middleware/client',
+  'webpack-hot-middleware/client?reload=true',
   webpackConfig.entry.client
 ]
 
@@ -27,13 +26,6 @@ const devMiddleWare = require('webpack-dev-middleware')(compiler, {
 app.use(devMiddleWare)
 app.use(require('webpack-hot-middleware')(compiler))
 
-if (dllPlugin) {
-  app.get(/\.dll\.js$/, (req, res) => {
-    const filename = req.path.replace(/^\//, '')
-    res.sendFile(path.join(process.cwd(), 'node_modules/react-ele-start-dlls/', filename))
-  })
-}
-
 app.get('*', (req, res) => {
   const fs = devMiddleWare.fileSystem
   devMiddleWare.waitUntilValid(() => {
@@ -42,6 +34,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen('9999', () => {
-  console.log(`\nListening at http://localhost:9999`)
+app.listen(config.port, () => {
+  console.log(`\nListening at http://localhost:${config.port}`)
 })

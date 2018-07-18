@@ -1,3 +1,6 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const config = require('./config')
+
 const path = require('path')
 
 module.exports = {
@@ -30,5 +33,12 @@ module.exports = {
         loader: 'file-loader?limit=8192'
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: config.title,
+      template: path.resolve(__dirname, './index.html'),
+      filename: 'index.html'
+    })
+  ]
 }
