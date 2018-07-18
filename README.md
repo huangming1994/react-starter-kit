@@ -35,6 +35,5 @@
 ### Get Start
 ```
 npm i   安装依赖
-npm run build:dll   生成dll
 npm run dev   启服务
 ```
