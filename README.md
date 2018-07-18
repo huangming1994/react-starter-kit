@@ -6,7 +6,7 @@
     | - config.js  打包的配置文件
     | - index.html   模板html
     | - webpack.base.js   webpack基础通用配置
-    | - webpack.base.js   webpack本地配置环境
+    | - webpack.local.js   webpack本地配置环境
     | - webpack.dev.js    webpack测试环境配置
     | - webpack.prod.js   webpack生产环境配置
 - src
@@ -35,6 +35,5 @@
 ### Get Start
 ```
 npm i   安装依赖
-npm run build:dll   生成dll
 npm run dev   启服务
 ```
