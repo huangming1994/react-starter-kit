@@ -2,8 +2,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const base = require('./webpack.base')
 
-base.output.publicPath = '/assets/'
-
 base.mode = 'development'
 
 base.module.rules.push({

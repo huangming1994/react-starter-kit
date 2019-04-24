@@ -1,19 +1,23 @@
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DefinePlugin = require('webpack').DefinePlugin
 const config = require('./config')
 
-const path = require('path')
 
 module.exports = {
   entry: {
-    client: './src/App.js',
+    client: './src/index',
   },
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: '[name].js',
-    publicPath: './'
+    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].[hash:8].js',
+    publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
   },
   module: {
     rules: [
@@ -35,8 +39,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new DefinePlugin({
+      'process.env': {
+        APP_ENV: JSON.stringify(process.env.APP_ENV)
+      }
+    }),
     new HtmlWebpackPlugin({
       title: config.title,
+      favicon: path.resolve(__dirname, './favicon.ico'),
       template: path.resolve(__dirname, './index.html'),
       filename: 'index.html'
     })

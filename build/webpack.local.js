@@ -3,7 +3,19 @@ const base = require('./webpack.base')
 
 base.mode = 'development'
 base.devtool = 'eval-source-map'
-base.output.publicPath = '/assets/'
+
+base.devServer = {
+  hot: true,
+  compress: true,
+  inline: true,
+  historyApiFallback: true,
+  proxy: {
+    '/api': {
+      target: '',
+      pathRewrite: { '^/api': '' },
+    }
+  }
+}
 
 // Plugins Configuration
 base.plugins.push(

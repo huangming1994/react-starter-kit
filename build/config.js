@@ -1,7 +1,7 @@
 const pkg = require('../package.json')
 
 module.exports = {
-  title: 'react-ele-start',
-  port: '9999',
+  title: 'Tangram',
+  port: '33333',
   dll: Object.keys(pkg.dependencies),
 }

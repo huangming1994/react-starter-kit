@@ -12,10 +12,6 @@ base.optimization = {
   splitChunks: {
     chunks: 'initial',
     cacheGroups: {
-      default: {
-        enforce: true,
-        priority: 1
-      },
       vendors: {
         test: /[\\/]node_modules[\\/]/,
         priority: 2,
@@ -29,6 +25,13 @@ base.optimization = {
 
 base.module.rules.push({
   test: /\.css$/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    'postcss-loader'
+  ]
+}, {
+  test: /\.less$/,
   use: [
     MiniCssExtractPlugin.loader,
     'css-loader',
